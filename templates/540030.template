@@ -1,0 +1,36 @@
+POST /halob_ilm_qa/identity/v7/add HTTP/1.1
+Content-Type: application/json
+
+{
+   "company_id":21,
+   "userid":"pvr_ilm_03@att.com",
+   "profile":[
+      {
+         "attribute_id":12,
+         "attribute_name":"cn",
+         "attribute_value":"Prashanthy"
+      },
+      {
+         "attribute_id":19,
+         "attribute_name":"sn",
+         "attribute_value":"Reddy"
+      },
+      {
+         "attribute_id":584,
+         "attribute_name":"OrgID",
+         "attribute_mvalue":["1804fnqa"]
+      }
+
+   ],
+   "entitlement":[
+      {
+          "attribute_id":23,
+         "attribute_name":"G_FN_ADM"
+      },
+      {
+         "attribute_id":21,
+         "attribute_name":"G_FN"
+      }
+   ]
+}
+
