@@ -14,6 +14,8 @@ RUN /usr/bin/pip install -e .
 ADD templates /root/.syntribos/templates
 ADD syntribos_demo.conf /root/.syntribos/syntribos.conf
 
-ENTRYPOINT [ "/bin/sh", "-c" ]
+COPY entrypoint.sh /usr/local/bin/
+RUN ln -s usr/local/bin/entrypoint.sh / # backwards compat
+RUN chmod +x /usr/local/bin/entrypoint.sh
 
-CMD [ "/usr/bin/syntribos --config-file ${config_file_location} run"]
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]

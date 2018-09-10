@@ -11,7 +11,18 @@ spec:
           containers:
           - name: daily-syntribos-cronjob
             image: tonytan4ever/docker-openstack-syntribos-customized:latest
+            volumeMounts:
+              - name: host-mount
+                mountPath: /mount-opt
             env:
               - name: config_file_location
                 value: /root/.syntribos/syntribos.conf
+              - name: MY_JOB_NAME
+                valueFrom:
+                  fieldRef:
+                    fieldPath: metadata.name
+          volumes:
+              - name: host-mount
+                hostPath:
+                  path: /mount-opt
           restartPolicy: OnFailure
