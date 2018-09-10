@@ -1,0 +1,2 @@
+GET /isam/oidcclient/redirect/amapp-runtime-instarpremierrpendpoint HTTP/1.1
+Accept: text/html
