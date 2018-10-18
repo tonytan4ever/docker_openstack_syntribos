@@ -9,6 +9,7 @@ RUN /usr/bin/syntribos init --force
 # Run my fork
 RUN git clone https://github.com/tonytan4ever/syntribos
 WORKDIR syntribos
+RUN git pull
 RUN /usr/bin/pip install -e .
 
 ADD templates /root/.syntribos/templates
