@@ -1,0 +1,22 @@
+FROM woledzki/alpine-virtualenv:latest
+
+LABEL maintainer="tonytan4ever <tonytan198211@gmail.com>"
+
+RUN apk update && apk add --virtual build-dependencies  && apk add linux-headers
+RUN /usr/bin/pip install syntribos
+RUN /usr/bin/syntribos init --force
+
+# Run my fork
+RUN git clone https://yt658p@codecloud.web.att.com/scm/st_sre/sre_syntribos.git
+WORKDIR syntribos
+RUN git pull
+RUN /usr/bin/pip install -e .
+
+ADD templates /root/.syntribos/templates
+ADD syntribos_demo.conf /root/.syntribos/syntribos.conf
+
+COPY entrypoint.sh /usr/local/bin/
+RUN ln -s usr/local/bin/entrypoint.sh / # backwards compat
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]

@@ -1,0 +1,2 @@
+GET /isam/sps/oidc/client/FnetRP?oidc_client=amapp-runtime-instarpremierrpendpoint&Target=https://test-wireless.firstnet.att.com/b2bservlets/HaloSSOLoginServlet.dyn?REFERRER HTTP/1.1
+Accept: text/html

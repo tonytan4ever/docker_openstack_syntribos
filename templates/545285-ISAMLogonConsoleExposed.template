@@ -1,0 +1,2 @@
+GET /server-status HTTP/1.1
+Accept: text/html
